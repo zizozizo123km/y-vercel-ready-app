@@ -1,0 +1,47 @@
+This configuration is optimized for a modern web application (like a large-scale Facebook application) using React, targeting modern browser environments, and including the specified library and reference directives.
+
+{
+  "compilerOptions": {
+    /* Base Options */
+    "target": "ES2020",
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM"], // Required inclusion: ESNext features and DOM types
+    
+    /* Module Resolution */
+    "moduleResolution": "bundler",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    
+    /* JSX and React */
+    "jsx": "react-jsx", 
+    "allowSyntheticDefaultImports": true, // Allows default imports from modules with no default export
+
+    /* Type Checking */
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* Miscellaneous */
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "declaration": true
+  },
+  
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "build", "**/*.spec.ts", "**/*.test.tsx"],
+
+  /* Project References (Required) */
+  "references": [
+    {
+      "path": "./tsconfig.node.json" 
+    }
+  ]
+}
