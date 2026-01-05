@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - Log In or Sign Up</title>
+    <link rel="icon" href="https://static.xx.fbcdn.net/rsrc.php/yb/r/hH0-y-g9D9C.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            width: 980px;
+            margin: auto;
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+
+        .left-side {
+            width: 580px;
+            padding-right: 30px;
+            text-align: left;
+        }
+
+        .left-side img {
+            height: 106px;
+            margin: -28px;
+            margin-bottom: -10px;
+        }
+
+        .left-side h2 {
+            font-size: 28px;
+            font-weight: normal;
+            line-height: 32px;
+            color: #1c1e21;
+        }
+
+        .right-side {
+            width: 396px;
+        }
+
+        .login-box {
+            background-color: #fff;
+            border: 1px solid #dddfe2;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+            padding: 15px 0 20px;
+            text-align: center;
+        }
+
+        .login-box input[type="text"],
+        .login-box input[type="password"] {
+            width: 90%;
+            padding: 14px 16px;
+            margin-bottom: 10px;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            font-size: 17px;
+            box-sizing: border-box;
+        }
+
+        .login-box input[type="text"]:focus,
+        .login-box input[type="password"]:focus {
+            outline: none;
+            border-color: #1877f2;
+            box-shadow: 0 0 0 2px #e7f3ff;
+        }
+
+        .login-box button.login-btn {
+            background-color: #1877f2;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 14px 16px;
+            width: 90%;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .login-box button.login-btn:hover {
+            background-color: #166fe5;
+        }
+
+        .login-box a.forgot-password {
+            color: #1877f2;
+            font-size: 14px;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .login-box a.forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .separator {
+            border-bottom: 1px solid #dadde1;
+            margin: 20px 16px;
+        }
+
+        .login-box button.create-account-btn {
+            background-color: #42b72a;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            padding: 14px 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .login-box button.create-account-btn:hover {
+            background-color: #36a420;
+        }
+
+        .create-page-link {
+            font-size: 14px;
+            margin-top: 28px;
+            text-align: center;
+        }
+
+        .create-page-link a {
+            color: #1c1e21;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .create-page-link a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            width: 980px;
+            margin: 0 auto;
+            padding: 20px 0;
+            color: #737373;
+            font-size: 12px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .footer-links ul li {
+            padding: 0 10px 5px 0;
+        }
+
+        .footer-links ul li a {
+            text-decoration: none;
+            color: #737373;
+        }
+
+        .footer-links ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-language {
+            margin-bottom: 10px;
+        }
+
+        .footer-copyright {
+            margin-top: 10px;
+            padding-top: 5px;
+            border-top: 1px solid #dadde1;
+        }
+
+        /* Mobile Adjustments (optional, for a more robust design) */
+        @media (max-width: 990px) {
+            .container {
+                flex-direction: column;
+                padding-top: 0;
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .left-side, .right-side {
+                width: 100%;
+                text-align: center;
+                padding: 0;
+            }
+
+            .left-side {
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+
+            .left-side img {
+                margin: 0 auto;
+                height: 50px; /* Smaller logo on mobile view */
+                margin-bottom: 10px;
+            }
+
+            .left-side h2 {
+                font-size: 20px;
+                line-height: 24px;
+                padding: 0 20px;
+            }
+
+            .login-box {
+                box-shadow: none;
+                border: none;
+                margin: 0 20px;
+            }
+
+            .footer-links {
+                display: none; /* Often hidden or simplified on strict mobile views */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Content Area -->
+    <div class="container">
+        <div class="left-side">
+            <!-- Facebook Logo (Using actual image URL for realism) -->
+            <img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3S-BG.svg" alt="Facebook">
+            <h2>Facebook helps you connect and share with the people in your life.</h2>
+        </div>
+
+        <div class="right-side">
+            <div class="login-box">
+                <form action="#" method="POST">
+                    <input type="text" placeholder="Email address or phone number" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit" class="login-btn">Log In</button>
+                </form>
+                <a href="#" class="forgot-password">Forgotten password?</a>
+                <div class="separator"></div>
+                <button type="button" class="create-account-btn">Create New Account</button>
+            </div>
+            <p class="create-page-link">
+                <a href="#">Create a Page</a> for a celebrity, band or business.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer Area -->
+    <div class="footer-links">
+        <div class="footer-language">
+            <ul>
+                <li>English (UK)</li>
+                <li><a href="#">العربية</a></li>
+                <li><a href="#">Français (France)</a></li>
+                <li><a href="#">Deutsch</a></li>
+                <li><a href="#">Español</a></li>
+                <li><a href="#">Italiano</a></li>
+                <li><a href="#">Português (Brasil)</a></li>
+                <li><a href="#">हिन्दी</a></li>
+                <li><a href="#">中文(简体)</a></li>
+                <li><a href="#">日本語</a></li>
+                <li><a href="#">+</a></li>
+            </ul>
+        </div>
+        <div class="separator"></div>
+        <div class="footer-details">
+            <ul>
+                <li><a href="#">Sign Up</a></li>
+                <li><a href="#">Log In</a></li>
+                <li><a href="#">Messenger</a></li>
+                <li><a href="#">Facebook Lite</a></li>
+                <li><a href="#">Watch</a></li>
+                <li><a href="#">People</a></li>
+                <li><a href="#">Pages</a></li>
+                <li><a href="#">Page Categories</a></li>
+                <li><a href="#">Places</a></li>
+                <li><a href="#">Games</a></li>
+                <li><a href="#">Locations</a></li>
+                <li><a href="#">Marketplace</a></li>
+                <li><a href="#">Facebook Pay</a></li>
+                <li><a href="#">Groups</a></li>
+                <li><a href="#">Oculus</a></li>
+                <li><a href="#">Portal</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Local</a></li>
+                <li><a href="#">Fundraisers</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Voting Information Centre</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Create Ad</a></li>
+                <li><a href="#">Create Page</a></li>
+                <li><a href="#">Developers</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Cookies</a></li>
+                <li><a href="#">AdChoices</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </div>
+        <div class="footer-copyright">
+            Meta &copy; 2024
+        </div>
+    </div>
+</body>
+</html>
